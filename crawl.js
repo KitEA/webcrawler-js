@@ -42,7 +42,30 @@ function getURLsFromHTML(htmlBody, baseURL) {
     return urls;
 }
 
+async function crawlPage(url) {
+    try {
+        const response = await fetch(url);
+
+        if (response.status > 399) {
+            console.log(`error in fetch with status code: ${response.status}, on page: ${url}`)
+            return
+        } 
+        
+        const contentType = response.headers.get('content-type');
+        
+        if (!contentType.includes('text/html')) {
+            console.log(`not html response, content type: ${contentType}, on page: ${url}`)
+            return
+        }
+
+        console.log(await response.text());
+    } catch (error) {
+        console.log(`error in fetch: ${error.message}, on page: ${url}`)
+    }
+}
+
 module.exports  = {
     normalizeURL,
-    getURLsFromHTML
+    getURLsFromHTML,
+    crawlPage
 }
