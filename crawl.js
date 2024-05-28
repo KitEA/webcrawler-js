@@ -29,10 +29,7 @@ async function crawlPage(baseURL, currentURL = baseURL, pages = {}) {
 async function fetchHTML(url) {
     let response
     try {
-      response = await fetch(url, {
-        method: "GET",
-        mode: "cors"
-      });
+      response = await fetch(url);
     } catch (err) {
       throw new Error(`Network error: ${err.message}`);
     }
@@ -53,7 +50,7 @@ async function fetchHTML(url) {
     const urls = getURLsFromHTML(html, baseURL);
 
     for (const url of urls) {
-        pages = crawlPage(baseURL, url, pages);
+        pages = await crawlPage(baseURL, url, pages);
     }
 
     return pages;
