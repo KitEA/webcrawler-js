@@ -1,5 +1,5 @@
 import { test, expect } from '@jest/globals'
-import { normalizeURL, getURLsFromHTML } from './crawl.js'
+import { normalizeURL, getURLsFromHTML } from '../../src/services/crawl.js'
 
 test('normalizeURL empty string', () => {
     const actual = normalizeURL('');

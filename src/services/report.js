@@ -1,4 +1,4 @@
-import { sortOccurrencesObj } from './utility.js'
+import { sortOccurrencesObj } from '../utils/utility.js'
 
 function printReport(pages) {
     console.log("Forming the report..");

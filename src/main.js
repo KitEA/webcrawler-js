@@ -1,5 +1,5 @@
-import { crawlPage } from './crawl.js';
-import { printReport } from './report.js';
+import { crawlPage } from './services/crawl.js';
+import { printReport } from './services/report.js';
 
 async function main() {
     if (process.argv.length > 3 || process.argv.length < 3) {

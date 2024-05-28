@@ -1,5 +1,5 @@
 import { test, expect } from '@jest/globals'
-import { sortOccurrencesObj } from './utility.js'
+import { sortOccurrencesObj } from '../../src/utils/utility.js'
 
 test('should sort pages obj by value, desc', () => {
     const input = {
