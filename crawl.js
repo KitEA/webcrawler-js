@@ -1,4 +1,4 @@
-const { JSDOM } = require('jsdom');
+import { JSDOM } from 'jsdom';
 
 async function crawlPage(baseURL, currentURL = baseURL, pages = {}) {
     if (baseURL !== currentURL && notOnTheSameDomain(currentURL, baseURL)) {
@@ -121,8 +121,5 @@ function addAbsouluteURL(linkElement, urls) {
     }
 }
 
-module.exports  = {
-    normalizeURL,
-    getURLsFromHTML,
-    crawlPage
-}
+
+export { normalizeURL, getURLsFromHTML, crawlPage }

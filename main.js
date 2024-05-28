@@ -1,4 +1,4 @@
-const { crawlPage } = require('./crawl')
+import { crawlPage } from './crawl.js';
 
 async function main() {
     if (process.argv.length > 3 || process.argv.length < 3) {
